@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="/assets/css/atom-one-light.css">
+    
+        <title>git版本控制</title>
+		<link rel="stylesheet" type="text/css" href="/assets/css/002.css">
+    
+	<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+	<script src="/assets/js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="default_title">
+			<img src="/assets/img/mycomputer.png" />
+			
+				<h1>rainfallmax</h1>
+			
+		</div>
+		<ul class="topbar">
+	<a href="/me"><li><u>A</u>bout</li></a>
+	<a href="https://weibo.com/547696364" target="_blank"><li><u>W</u>eibo</li></a>
+</ul>
+		<div class="tag_list">
+			<ul id="tag-list">
+				<li><a href="/" ><img src="/assets/img/disk.png" />(C:我的文档)</a>
+			<ul>
+				
+				
+				<li><a href="/tag/python/" title="Python"><img src="/assets/img/folder.ico" />Python</a></li>
+				
+				<li><a href="/tag/git/" title="git"><img src="/assets/img/folder.ico" />git</a></li>
+				
+				<li><a href="/tag/tag1/" title="tag1"><img src="/assets/img/folder.ico" />tag1</a></li>
+				
+				<li><a href="/tag/tag2/" title="tag2"><img src="/assets/img/folder.ico" />tag2</a></li>
+				
+				<li><a href="/tag/tag3/" title="tag3"><img src="/assets/img/folder.ico" />tag3</a></li>
+				
+				<li><a href="/tag/tag4/" title="tag4"><img src="/assets/img/folder.ico" />tag4</a></li>
+				
+			</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="post_list">
+			
+				<ul>
+					
+					<li><a href="/20180505/git%E7%AC%94%E8%AE%B0" title="git版本控制"><img src="/assets/img/file.ico" title="git版本控制" />git版本控制</a></li>
+					
+					<li><a href="/20170916/markdown-test-page" title="Markdown Test Page"><img src="/assets/img/file.ico" title="Markdown Test Page" />Markdown Test Page</a></li>
+					
+					<li><a href="/20170831/lorem-ipsum" title="Lorem Ipsum"><img src="/assets/img/file.ico" title="Lorem Ipsum" />Lorem Ipsum</a></li>
+					
+				</ul>
+			
+		</div>
+		<div class="post_total">
+			
+				<div class="left">3 object(s)</div>
+			
+			<div class="right">&nbsp;</div>
+		</div>
+	</div>
+	
+        <div class="content">
+			<div class="post_title">
+				<img src="/assets/img/file.png" />
+				<h1>git版本控制</h1>
+				<a href="/"><div class="btn"><span class="fa fa-times"></span></div></a>
+				<div class="btn btn_max"><span class="fa fa-window-maximize"></span></div>
+				<div class="btn"><span class="fa fa-window-minimize"></span></div>
+			</div>
+			<ul class="topbar">
+				<li>May 5, 2018</li>
+			</ul>
+			<div class="post_content">
+        		<h3 id="一安装">一、安装</h3>
+<p>官网选择合适方式安装
+<a href="https://git-scm.com/">Git</a></p>
+
+<h3 id="二-创建仓库">二、 创建仓库</h3>
+<ul>
+  <li>创建并选中仓库文件夹
+    <pre><code>$ mkdir learn-git
+$ cd learn-git
+</code></pre>
+  </li>
+</ul>
+
+<p>通过git init命令把这个目录变成Git可以管理的仓库</p>
+<pre><code>git init
+</code></pre>
+
+<h3 id="三添加文件add">三、添加文件(add)</h3>
+<p>第一步，使用命令**git add <file>**，注意，可反复多次使用，添加多个文件；</file></p>
+<pre><code>git add readme.txt
+</code></pre>
+<p>第二步，使用命令<strong>git commit</strong>，完成。</p>
+<pre><code>git commit -m "wrote a readme file"
+</code></pre>
+<p>git commit命令，-m后面输入的是本次提交的说明，能从历史记录里方便地找到改动记录。</p>
+<h3 id="四查看版本历史log">四、查看版本历史(log)</h3>
+<pre><code>git log
+
+git log --oneline
+</code></pre>
+
+<h3 id="五回溯版本reset">五、回溯版本(reset)</h3>
+<p>有两个提交信息，现在需要回退版本</p>
+<blockquote>
+  <p>586bead (HEAD -&gt; master) use git<br />
+d2142d7 use git</p>
+</blockquote>
+
+<p>回退到指定版本</p>
+<pre><code>git reset --HEAD d2142d7
+</code></pre>
+
+<p>查看所有记录</p>
+<pre><code>git reflog
+
+输出示例
+586bead (HEAD -&gt; master) HEAD@{0}: commit: use git
+d2142d7 HEAD@{1}: commit (initial): use git
+</code></pre>
+
+<p>回到现在版本</p>
+<pre><code>git reset --hard d2142d7
+或者
+git reset --hard HEAD@{1}
+</code></pre>
+
+<h3 id="六单个文件回溯checkout">六、单个文件回溯（checkout）</h3>
+
+<pre><code>git checkout d2142d7 --file
+</code></pre>
+<p>Git  checkout 回退版本+文件</p>
+
+<h3 id="七分支">七、分支</h3>
+<p>创建dev分支</p>
+<pre><code>git branch dev
+</code></pre>
+<p>查看所有分支</p>
+<pre><code>git branch
+</code></pre>
+<p>切换分支</p>
+<pre><code>git checkout dev
+</code></pre>
+<p>删除分支</p>
+<pre><code>git branch -d dev
+</code></pre>
+
+
+				
+					<br>
+<hr>
+<br>
+<div class="donate">
+	<p>Life is short, you need Python </p>
+</div>
+				
+			</div>
+		</div>
+    
+	<script src="/assets/js/001.js"></script>
+	<script src="/assets/js/002.js"></script>
+
+</body>
+</html>

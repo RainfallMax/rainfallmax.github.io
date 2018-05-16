@@ -7,5 +7,8 @@ tag2:
 tag3:
   name: tag3
 
-Python:
-  name: Python
+python:
+  name: python
+
+git:
+  name: git
