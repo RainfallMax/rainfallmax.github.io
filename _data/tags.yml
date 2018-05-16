@@ -12,3 +12,6 @@ python:
 
 git:
   name: git
+
+leetcode:
+  name: leetcode
