@@ -3,5 +3,4 @@ layout: me
 title: me
 ---
 
-在学 Python ，
-也在刷 LeetCode .
+一个在学 Python 的辣鸡
